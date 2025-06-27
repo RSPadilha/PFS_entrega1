@@ -1,12 +1,13 @@
 import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
 import { ClienteService } from '../services/cliente.service';
+import { Cliente } from 'src/models/cliente.entity';
 
 @Controller('clientes')
 export class ClienteController {
    constructor(private readonly clienteService: ClienteService) { }
 
    @Post()
-   create(@Body() data: any) {
+   create(@Body() data: Cliente) {
       return this.clienteService.create(data);
    }
 

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Cliente } from '../models/cliente.entity';
@@ -10,7 +10,10 @@ export class ClienteService {
       private clienteRepository: Repository<Cliente>,
    ) { }
 
-   create(data: Partial<Cliente>) {
+   create(data: Cliente) {
+      if (!data.nome || !data.email) {
+         throw new BadRequestException('Dados inválidos: todos os campos devem ser preenchidos.');
+      }
       return this.clienteRepository.save(data);
    }
 

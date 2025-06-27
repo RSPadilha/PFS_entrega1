@@ -18,3 +18,18 @@ Este projeto é um backend em NestJS, TypeScript, TypeORM e PostgreSQL. Ele impl
    ```cmd
    npm run start
    ```
+
+## Endpoints
+   ### Clientes
+
+   **GET** [`/clientes`](http://localhost:3000/clientes)  
+      Lista todos os clientes.
+
+   **POST** [`/clientes`](http://localhost:3000/clientes)  
+      Cria um novo cliente passando um body json { nome, email }
+
+   **PUT** [`/clientes/:id`](http://localhost:3000/clientes/:id)  
+      Atualiza um cliente existente passando um body json { nome, email }
+
+   **DELETE** [`/clientes/:id`](http://localhost:3000/clientes/:id)  
+      Remove um cliente.
