@@ -8,9 +8,27 @@ export class Cliente {
 
   @Column()
   nome: string;
+  
+  @Column()
+  telefone: string;
+
+  @Column("simple-json")
+  endereco: {
+    // TODO forçar tipagem com DTO
+    cep: string;
+    estado: string;
+    cidade: string;
+    rua: string;
+    bairro: string;
+    numero: string;
+    complemento?: string;
+  };
 
   @Column()
   email: string;
+
+  @Column()
+  senha: string;
 
   @OneToMany(() => Pedido, pedido => pedido.cliente)
   pedidos: Pedido[];

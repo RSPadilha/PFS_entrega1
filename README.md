@@ -33,3 +33,12 @@ Este projeto é um backend em NestJS, TypeScript, TypeORM e PostgreSQL. Ele impl
 
    **DELETE** [`/clientes/:id`](http://localhost:3000/clientes/:id)  
       Remove um cliente.
+
+## Melhorias a Implementar
+
+- [ ] 
+- Implementar DTOs (Data Transfer Objects) para o modelo de Cliente e demais entidades.
+- Documentar a API utilizando Swagger (`@nestjs/swagger`).
+- Implementar autenticação e autorização (JWT).
+- Adicionar testes unitários e de integração.
+- Melhorar tratamento de erros e mensagens de resposta.
